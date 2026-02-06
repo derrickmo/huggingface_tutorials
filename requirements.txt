@@ -1,0 +1,197 @@
+# ============================================================================
+# HuggingFace Tutorial - Dependencies
+# Python 3.8+ required
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# CORE DEPENDENCIES (Required for all notebooks)
+# ----------------------------------------------------------------------------
+
+# HuggingFace ecosystem
+transformers>=4.30.0          # Core library for all models
+datasets>=2.14.0              # Dataset loading and processing
+huggingface-hub>=0.16.0       # Model hub interaction
+accelerate>=0.20.0            # Training acceleration and device management
+
+# Deep Learning Framework
+torch>=2.0.0                  # PyTorch - main deep learning framework
+torchvision>=0.15.0           # Computer vision models and utilities
+torchaudio>=2.0.0             # Audio processing utilities
+
+# Image Processing
+Pillow>=9.5.0                 # Image loading and manipulation
+
+# Audio Processing
+soundfile>=0.12.0             # Audio file I/O
+librosa>=0.10.0               # Audio analysis and processing
+
+# Utilities
+numpy>=1.24.0                 # Numerical computing
+requests>=2.31.0              # HTTP requests for downloading data
+tqdm>=4.65.0                  # Progress bars
+
+# Jupyter Support
+jupyter>=1.0.0                # Jupyter notebook environment
+ipywidgets>=8.0.0             # Interactive widgets for notebooks
+
+# ----------------------------------------------------------------------------
+# VISUALIZATION DEPENDENCIES (For notebooks 11-13)
+# ----------------------------------------------------------------------------
+
+matplotlib>=3.7.0             # Basic plotting
+seaborn>=0.12.0               # Statistical visualizations
+plotly>=5.14.0                # Interactive plots
+
+# ----------------------------------------------------------------------------
+# MEMORY PROFILING (For notebook 11)
+# ----------------------------------------------------------------------------
+
+psutil>=5.9.0                 # System and process utilities
+
+# ----------------------------------------------------------------------------
+# FINE-TUNING DEPENDENCIES (For notebook 13)
+# ----------------------------------------------------------------------------
+
+peft>=0.5.0                   # Parameter-Efficient Fine-Tuning (LoRA)
+trl                           # Transformer Reinforcement Learning (SFTTrainer)
+
+# ----------------------------------------------------------------------------
+# OPTIONAL: ADVANCED/STATE-OF-THE-ART MODELS
+# Install only if you want to use these specific features
+# ----------------------------------------------------------------------------
+
+# Object Detection - YOLOv8 (Notebook 05 - Method 3)
+# Uncomment if you want to try YOLO:
+ultralytics>=8.0.0            # YOLOv8 for real-time object detection
+
+# OCR - PaddleOCR (Notebook 06 - Method 2)
+# Uncomment if you want to try PaddleOCR:
+# IMPORTANT: Choose ONE of the following based on your system:
+# - paddlepaddle>=2.5.0 for CPU-only
+# - paddlepaddle-gpu>=2.5.0 for GPU (requires CUDA)
+paddlepaddle>=2.5.0           # PaddlePaddle framework (CPU version)
+paddleocr>=2.7.0              # PaddleOCR for advanced OCR
+opencv-python>=4.8.0          # OpenCV for image processing (required by PaddleOCR)
+
+# Fine-tuning Optimization - Unsloth (Notebook 13 - Part 7)
+# Uncomment if you want 2-5x faster LoRA training:
+# NOTE: Unsloth requires specific installation, see getting_started.md
+# unsloth @ git+https://github.com/unslothai/unsloth.git
+
+# Ollama Integration (Notebooks 10, 14-16)
+# Uncomment if you want to use local LLMs:
+# ollama>=0.1.0
+
+# MCP for Agentic Workflows (Notebooks 14-16)
+# Uncomment if you want to build tool-using agents:
+# mcp>=0.1.0
+
+# RAG Dependencies (Notebook 17)
+# Uncomment if you want to build RAG systems:
+# sentence-transformers>=2.2.0  # Embedding models
+# faiss-cpu>=1.7.4              # Vector database (CPU version)
+# chromadb>=0.4.0               # Alternative vector database with persistence
+
+# ----------------------------------------------------------------------------
+# PLATFORM-SPECIFIC NOTES
+# ----------------------------------------------------------------------------
+
+# Windows Users:
+# - If you encounter issues with audio libraries, you may need to install
+#   Microsoft Visual C++ 14.0 or greater
+# - For GPU support, ensure CUDA Toolkit is installed
+
+# macOS Users:
+# - Some audio processing may require ffmpeg: brew install ffmpeg
+# - M1/M2 Macs: PyTorch has native Apple Silicon support
+
+# Linux Users:
+# - For audio: sudo apt-get install libsndfile1
+# - For GPU: Ensure NVIDIA drivers and CUDA are properly installed
+
+# ----------------------------------------------------------------------------
+# GPU SUPPORT
+# ----------------------------------------------------------------------------
+
+# The default torch installation includes CPU support only
+# For GPU support with CUDA, visit: https://pytorch.org/get-started/locally/
+# and follow instructions for your CUDA version
+
+# Example for CUDA 11.8:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# Example for CUDA 12.1:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# ----------------------------------------------------------------------------
+# INSTALLATION INSTRUCTIONS
+# ----------------------------------------------------------------------------
+
+# Basic Installation (CPU, all core notebooks):
+#   pip install -r requirements.txt
+
+# With GPU Support:
+#   1. Install CUDA-enabled PyTorch first (see GPU SUPPORT section above)
+#   2. Then: pip install -r requirements.txt
+
+# Minimal Installation (just test if setup works):
+#   pip install transformers torch datasets jupyter
+
+# Full Installation (everything including optional packages):
+#   Uncomment optional packages above, then:
+#   pip install -r requirements.txt
+
+# ----------------------------------------------------------------------------
+# DEPENDENCY SUMMARY BY NOTEBOOK
+# ----------------------------------------------------------------------------
+
+# Notebooks 01-10: Core dependencies only
+# Notebook 05 (Object Detection):
+#   - Core dependencies (DETR models)
+#   - Optional: ultralytics (for YOLOv8)
+# Notebook 06 (OCR):
+#   - Core dependencies (TrOCR models)
+#   - Optional: paddlepaddle + paddleocr (for PaddleOCR)
+# Notebook 10 (Ollama):
+#   - Core dependencies
+#   - Optional: ollama package
+# Notebook 11 (Performance):
+#   - Core + visualization dependencies
+#   - psutil for memory profiling
+# Notebook 12 (Model Cards):
+#   - Core dependencies only (no model downloads)
+# Notebook 13 (Fine-tuning):
+#   - Core + peft + trl
+#   - Optional: unsloth for 2-5x speedup
+# Notebooks 14-16 (Agentic Workflows):
+#   - Core dependencies
+#   - Optional: ollama package + mcp package
+#   - Requires Ollama installed with llama3.2:1b or llama3.1:8b models
+# Notebook 17 (RAG):
+#   - Core dependencies
+#   - Optional: sentence-transformers + faiss-cpu/chromadb + ollama
+#   - Embedding models: ~80-420MB depending on choice
+
+# ----------------------------------------------------------------------------
+# TROUBLESHOOTING
+# ----------------------------------------------------------------------------
+
+# Issue: "No module named 'transformers'"
+# Solution: pip install transformers
+
+# Issue: CUDA out of memory
+# Solution: Use CPU versions of models, or reduce batch size
+
+# Issue: Audio/Image import errors
+# Solution: pip install soundfile librosa Pillow
+
+# Issue: PaddleOCR installation fails
+# Solution: Install paddlepaddle separately first:
+#   pip install paddlepaddle (CPU) or paddlepaddle-gpu (GPU)
+#   Then: pip install paddleocr
+
+# Issue: Unsloth installation fails
+# Solution: Follow official instructions:
+#   pip install "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git"
+
+# For more help: See getting_started.md
