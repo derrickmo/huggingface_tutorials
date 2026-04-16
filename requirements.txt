@@ -1,6 +1,6 @@
 # ============================================================================
 # HuggingFace Tutorial - Dependencies
-# Python 3.8+ required
+# Python 3.10+ required
 # ============================================================================
 
 # ----------------------------------------------------------------------------
@@ -49,11 +49,12 @@ plotly>=5.14.0                # Interactive plots
 psutil>=5.9.0                 # System and process utilities
 
 # ----------------------------------------------------------------------------
-# FINE-TUNING DEPENDENCIES (For notebook 13)
+# FINE-TUNING DEPENDENCIES (For notebooks 01_07, 01_08, 05_08)
 # ----------------------------------------------------------------------------
 
 peft>=0.5.0                   # Parameter-Efficient Fine-Tuning (LoRA)
 trl                           # Transformer Reinforcement Learning (SFTTrainer)
+evaluate>=0.4.0               # HuggingFace evaluation metrics (accuracy, etc.)
 
 # ----------------------------------------------------------------------------
 # OPTIONAL: ADVANCED/STATE-OF-THE-ART MODELS
@@ -78,19 +79,45 @@ opencv-python>=4.8.0          # OpenCV for image processing (required by PaddleO
 # NOTE: Unsloth requires specific installation, see getting_started.md
 # unsloth @ git+https://github.com/unslothai/unsloth.git
 
-# Ollama Integration (Notebooks 10, 14-16)
+# Diffusion Models (Notebooks 04_03, 04_04 - Text-to-Image, Image Editing)
+# Uncomment if you want to generate/edit images with Stable Diffusion:
+# diffusers>=0.25.0
+# safetensors>=0.4.0
+
+# Gradio (Notebook 05_05 - Interactive Demos)
+# Uncomment if you want to build interactive ML demos:
+# gradio>=4.0.0
+
+# ONNX Optimization (Notebook 05_06 - Quantization Intro)
+# Uncomment if you want to try ONNX export and optimization:
+# onnx>=1.14.0
+# onnxruntime>=1.15.0
+# optimum[onnxruntime]>=1.12.0
+
+# Advanced Quantization (Notebook 05_07 - Quantization Deep Dive)
+# Uncomment if you have a CUDA GPU on Linux:
+# bitsandbytes>=0.41.0          # 4-bit/8-bit quantization
+# auto-gptq>=0.6.0              # GPTQ quantization
+# autoawq>=0.1.7                # AWQ quantization
+
+# Ollama Integration (Notebooks 05_01, 06_01-06_05)
 # Uncomment if you want to use local LLMs:
 # ollama>=0.1.0
 
-# MCP for Agentic Workflows (Notebooks 14-16)
+# MCP for Agentic Workflows (Notebooks 06_01-06_03)
 # Uncomment if you want to build tool-using agents:
 # mcp>=0.1.0
 
-# RAG Dependencies (Notebook 17)
+# RAG Dependencies (Notebook 06_04)
 # Uncomment if you want to build RAG systems:
 # sentence-transformers>=2.2.0  # Embedding models
 # faiss-cpu>=1.7.4              # Vector database (CPU version)
 # chromadb>=0.4.0               # Alternative vector database with persistence
+
+# Structured Output (Notebook 06_05)
+# Uncomment for schema-validated LLM output:
+# pydantic>=2.0.0               # Data validation with Python type hints
+# instructor>=0.5.0             # Pydantic-integrated LLM calls (optional)
 
 # ----------------------------------------------------------------------------
 # PLATFORM-SPECIFIC NOTES
@@ -145,32 +172,27 @@ opencv-python>=4.8.0          # OpenCV for image processing (required by PaddleO
 # DEPENDENCY SUMMARY BY NOTEBOOK
 # ----------------------------------------------------------------------------
 
-# Notebooks 01-10: Core dependencies only
-# Notebook 05 (Object Detection):
-#   - Core dependencies (DETR models)
-#   - Optional: ultralytics (for YOLOv8)
-# Notebook 06 (OCR):
-#   - Core dependencies (TrOCR models)
-#   - Optional: paddlepaddle + paddleocr (for PaddleOCR)
-# Notebook 10 (Ollama):
-#   - Core dependencies
-#   - Optional: ollama package
-# Notebook 11 (Performance):
-#   - Core + visualization dependencies
-#   - psutil for memory profiling
-# Notebook 12 (Model Cards):
-#   - Core dependencies only (no model downloads)
-# Notebook 13 (Fine-tuning):
-#   - Core + peft + trl
-#   - Optional: unsloth for 2-5x speedup
-# Notebooks 14-16 (Agentic Workflows):
-#   - Core dependencies
-#   - Optional: ollama package + mcp package
-#   - Requires Ollama installed with llama3.2:1b or llama3.1:8b models
-# Notebook 17 (RAG):
-#   - Core dependencies
-#   - Optional: sentence-transformers + faiss-cpu/chromadb + ollama
-#   - Embedding models: ~80-420MB depending on choice
+# 00_01-00_03 (Fundamentals): Core dependencies only
+# 01_01-01_06 (NLP core): Core dependencies only
+# 01_07-01_08 (Fine-tuning): Core + peft + trl; optional: unsloth
+# 02_01-02_03 (CV core): Core; optional: ultralytics (YOLOv8), paddleocr
+# 02_04 (Segmentation): Core dependencies only
+# 03_01-03_03 (Audio): Core + soundfile + librosa
+# 04_01 (Image-to-Text): Core dependencies only
+# 04_02 (VQA): Core dependencies only
+# 04_03-04_04 (Image Gen/Edit): Optional: diffusers (GPU recommended)
+# 04_05 (Document Understanding): Core + Pillow
+# 05_01 (Ollama): Optional: ollama package
+# 05_02 (Performance): Core + visualization + psutil
+# 05_03 (Model Cards): Core dependencies only
+# 05_04 (Datasets): Core (datasets already included)
+# 05_05 (Gradio): Optional: gradio
+# 05_06 (Quantization Intro): Optional: onnx + onnxruntime + optimum
+# 05_07 (Quantization Deep Dive): Optional: bitsandbytes, auto-gptq, autoawq (CUDA)
+# 05_08 (Training Best Practices): Core + evaluate
+# 06_01-06_03 (MCP/Agents): Optional: ollama + mcp
+# 06_04 (RAG): Optional: sentence-transformers + faiss-cpu/chromadb + ollama
+# 06_05 (Structured Output): Optional: pydantic + ollama; instructor
 
 # ----------------------------------------------------------------------------
 # TROUBLESHOOTING
