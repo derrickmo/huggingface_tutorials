@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is an **educational HuggingFace tutorial** repository designed to introduce students to the HuggingFace ecosystem through 36 hands-on Jupyter notebooks organized in 7 sections. The project is optimized for students with limited hardware resources while providing GPU-optimized alternatives for those with access to better equipment (RTX 4080 or similar).
+This is an **educational HuggingFace tutorial** repository designed to introduce students to the HuggingFace ecosystem through 38 hands-on Jupyter notebooks organized in 7 sections. The project is optimized for students with limited hardware resources while providing GPU-optimized alternatives for those with access to better equipment (RTX 4080 or similar).
 
 **Target Audience**: Students learning machine learning with varying hardware capabilities (CPU-only to consumer-grade GPUs)
 
@@ -412,7 +412,7 @@ ollama pull llama3.1:8b    # Large model, GPU-optimized
 
 | File | Purpose |
 |------|---------|
-| `SYLLABUS.md` | Authoritative 36-notebook syllabus with section/notebook listing. |
+| `SYLLABUS.md` | Authoritative 38-notebook syllabus with section/notebook listing. |
 | `hf_credential` | HuggingFace access token. **Never commit to public repos.** |
 | `sample_data/` | Test images and audio files. Notebooks use URLs as fallback. |
 | `notebooks/shared_utils.py` | Common helpers (e.g., `load_image_from_url`, `setup_device`). |
@@ -446,7 +446,7 @@ HuggingFace models are automatically cached in `~/.cache/huggingface/hub/`.
 **Medium (500MB-1.5GB)**: trocr-small (558MB), blip-base (990MB), distilbart (1.2GB), gpt2-medium (1.5GB)
 **Large (1.5GB+)**: bart-large (1.6GB), blip-large (1.9GB)
 
-**Total Storage**: Plan for 20-30GB total cache storage across all 36 notebooks.
+**Total Storage**: Plan for 20-30GB total cache storage across all 38 notebooks.
 
 ---
 

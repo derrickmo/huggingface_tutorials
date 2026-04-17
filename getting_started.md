@@ -1,6 +1,6 @@
 # Getting Started with HuggingFace Tutorial
 
-**Complete setup guide to run all 36 notebooks successfully.**
+**Complete setup guide to run all 38 notebooks successfully.**
 
 ## Table of Contents
 
@@ -60,7 +60,7 @@ jupyter notebook
 
 ### Recommended Specifications (with GPU)
 
-**Good for**: All 36 notebooks including fine-tuning, image generation, and advanced quantization
+**Good for**: All 38 notebooks including fine-tuning, image generation, and advanced quantization
 
 - **Python**: 3.10 or 3.11
 - **RAM**: 16GB minimum, 32GB recommended
@@ -352,7 +352,7 @@ For GPU-accelerated search: `pip install faiss-gpu` instead of `faiss-cpu`.
 
 ### Do I need a token?
 
-**For this tutorial**: No. All default models across the 36 notebooks work without authentication.
+**For this tutorial**: No. All default models across the 38 notebooks work without authentication.
 
 **When you need a token**:
 - Accessing gated models (Llama 2, Mistral Instruct, etc.)

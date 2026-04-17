@@ -1,6 +1,6 @@
 # HuggingFace Tutorial: Comprehensive Guide to Modern AI Models
 
-**Learn HuggingFace transformers with 36 hands-on Jupyter notebooks covering Transformer Fundamentals, NLP, Computer Vision, Audio, Multimodal AI, Best Practices, and Agentic Workflows.**
+**Learn HuggingFace transformers with 38 hands-on Jupyter notebooks covering Transformer Fundamentals, NLP, Computer Vision, Audio, Multimodal AI, Best Practices, and Agentic Workflows.**
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
@@ -29,7 +29,7 @@
 
 ## Overview
 
-This tutorial provides a complete introduction to the HuggingFace ecosystem with **36 hands-on Jupyter notebooks** across 7 sections. Each notebook is a self-contained, complete walkthrough -- no fill-in-the-blank exercises, just runnable code with explanations. Every notebook is designed to run on modest hardware with options to scale up for better performance.
+This tutorial provides a complete introduction to the HuggingFace ecosystem with **38 hands-on Jupyter notebooks** across 7 sections. Each notebook is a self-contained, complete walkthrough -- no fill-in-the-blank exercises, just runnable code with explanations. Every notebook is designed to run on modest hardware with options to scale up for better performance.
 
 ### What You'll Learn
 
@@ -80,7 +80,7 @@ jupyter notebook
 
 ## Notebooks
 
-All notebooks are in `notebooks/` organized by domain (7 sections, 36 notebooks). Each can be run independently in any order.
+All notebooks are in `notebooks/` organized by domain (7 sections, 38 notebooks). Each can be run independently in any order.
 
 ### Transformer Fundamentals (`00_fundamentals/`)
 
@@ -89,6 +89,8 @@ All notebooks are in `notebooks/` organized by domain (7 sections, 36 notebooks)
 | 00_01 | **Tokenization & Embeddings** | AutoTokenizer | BPE, WordPiece, vocabulary, special tokens, embeddings | Beginner |
 | 00_02 | **Transformer Architecture** | AutoModel | Self-attention, multi-head attention, encoder vs decoder | Beginner |
 | 00_03 | **HuggingFace Ecosystem** | Pipeline, HfApi | Hub navigation, AutoClasses, pipelines, model cards | Beginner |
+| 00_04 | **Preprocessors & Feature Extractors** | AutoProcessor | Unified preprocessing, padding/truncation, multimodal processors | Beginner |
+| 00_05 | **Model Configuration & Customization** | AutoConfig | config.json, model surgery, freezing, memory estimation | Beginner |
 
 ### NLP -- Natural Language Processing (`01_nlp/`)
 
@@ -253,13 +255,13 @@ pip install -r requirements.txt
 HuggingFace_Tutorial/
 ├── README.md                           # This file
 ├── CLAUDE.md                           # Claude Code conventions and rules
-├── SYLLABUS.md                         # Complete 36-notebook syllabus
+├── SYLLABUS.md                         # Complete 38-notebook syllabus
 ├── getting_started.md                  # Detailed setup instructions
 ├── requirements.txt                    # Python dependencies
 │
-├── notebooks/                          # 36 Jupyter notebooks
+├── notebooks/                          # 38 Jupyter notebooks
 │   ├── shared_utils.py                 # Common helper functions
-│   ├── 00_fundamentals/                # Transformer Fundamentals (3 notebooks)
+│   ├── 00_fundamentals/                # Transformer Fundamentals (5 notebooks)
 │   ├── 01_nlp/                         # NLP (8 notebooks)
 │   ├── 02_computer_vision/             # CV (4 notebooks)
 │   ├── 03_audio/                       # Audio (3 notebooks)
@@ -353,7 +355,7 @@ HuggingFace_Tutorial/
 
 ### Path 6: Complete Coverage
 
-All 36 notebooks by section. **Time**: 80-100 hours | **Hardware**: GPU with 12GB+ VRAM recommended
+All 38 notebooks by section. **Time**: 80-100 hours | **Hardware**: GPU with 12GB+ VRAM recommended
 
 ---
 
