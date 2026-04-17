@@ -4,7 +4,7 @@ This folder contains 4 notebooks covering tool-using agents, MCP servers, multi-
 
 ## Notebooks
 
-### Notebook 14: MCP Basics
+### Notebook 16: MCP Basics
 **Concepts**: Model Context Protocol, tool calling, agent loop, ReAct pattern
 **Models**: llama3.2:1b (1.3GB, CPU), llama3.1:8b (4.7GB, GPU)
 **Demo**: Build your first tool-using agent
@@ -55,7 +55,7 @@ User Query → LLM Reasons → Calls Tool → Observes Result → Reasons Again 
 
 ---
 
-### Notebook 15: MCP Servers
+### Notebook 17: MCP Servers
 **Concepts**: Reusable tool servers, file system operations, data analysis, security
 **Demo**: Build production-ready MCP servers
 
@@ -95,7 +95,7 @@ class FileSystemServer:
 
 ---
 
-### Notebook 16: Multi-Tool Agents
+### Notebook 18: Multi-Tool Agents
 **Concepts**: Agent patterns (ReAct, Plan-and-Execute, Reflection), multi-step workflows
 **Demo**: Compare different agent architectures
 
@@ -152,7 +152,7 @@ result = agent.run("Calculate 144 / 12 and verify the answer")
 
 ---
 
-### Notebook 17: RAG with Local LLMs
+### Notebook 19: RAG with Local LLMs
 **Concepts**: Retrieval-Augmented Generation, vector databases, semantic search, embeddings
 **Models**: sentence-transformers/all-MiniLM-L6-v2 (80MB), llama3.1:8b (4.7GB)
 **Demo**: Build a RAG system with local models
@@ -243,8 +243,8 @@ results = collection.query(
 
 | Notebook | Minimum | Recommended | Notes |
 |----------|---------|-------------|-------|
-| 14-16 (MCP/Agents) | 8GB RAM | 12GB VRAM (GPU) | llama3.1:8b needs GPU |
-| 17 (RAG) | 8GB RAM | 12GB VRAM (GPU) | Embedding model + LLM |
+| 16-18 (MCP/Agents) | 8GB RAM | 12GB VRAM (GPU) | llama3.1:8b needs GPU |
+| 19 (RAG) | 8GB RAM | 12GB VRAM (GPU) | Embedding model + LLM |
 
 **Model Storage:**
 - Llama 3.2:1b: 1.3GB
@@ -264,7 +264,7 @@ ollama pull llama3.1:8b  # Large model (GPU-optimized)
 ### Install Python Dependencies:
 ```bash
 pip install ollama mcp
-pip install sentence-transformers faiss-cpu chromadb  # For Notebook 17
+pip install sentence-transformers faiss-cpu chromadb  # For Notebook 19
 ```
 
 ## Running the Demos
@@ -272,7 +272,7 @@ pip install sentence-transformers faiss-cpu chromadb  # For Notebook 17
 1. **Ensure Ollama is running**: `ollama serve` (in background)
 2. **Activate environment**: `source venv/bin/activate`
 3. **Launch Jupyter**: `jupyter notebook`
-4. **Start with Notebook 14**: Build foundation first
+4. **Start with Notebook 16**: Build foundation first
 
 ## CLI Tools
 
@@ -325,13 +325,13 @@ python functions/agentic/multi_agent.py "Calculate 144 / 12" --pattern reflectio
 
 ## Practical Applications
 
-**MCP Agents (Notebooks 14-16):**
+**MCP Agents (Notebooks 16-18):**
 - Automated code review
 - Data pipeline orchestration
 - Customer support automation
 - Task scheduling and execution
 
-**RAG Systems (Notebook 17):**
+**RAG Systems (Notebook 19):**
 - Enterprise knowledge bases
 - Legal document search
 - Medical literature Q&A
@@ -339,12 +339,12 @@ python functions/agentic/multi_agent.py "Calculate 144 / 12" --pattern reflectio
 
 ## Performance Expectations
 
-**Agent Execution (Notebooks 14-16):**
+**Agent Execution (Notebooks 16-18):**
 - **llama3.2:1b (CPU)**: 2-5 seconds per turn
 - **llama3.1:8b (GPU)**: 1-3 seconds per turn
 - Tool execution: 100-500ms depending on complexity
 
-**RAG Pipeline (Notebook 17):**
+**RAG Pipeline (Notebook 19):**
 - **Embedding**: 50-100ms per query
 - **Vector search**: 10-50ms for 1000 documents
 - **LLM generation**: 1-4 seconds
